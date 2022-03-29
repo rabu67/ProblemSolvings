@@ -1,0 +1,41 @@
+First and last occurrences of x
+
+https://practice.geeksforgeeks.org/problems/first-and-last-occurrences-of-x3116/1/?page=1&category[]=Binary%20Search&sortBy=submissions#
+
+class GFG
+{
+    ArrayList<Long> find(long arr[], int n, int x)
+    {
+        // code here
+        ArrayList<Long> result = new ArrayList<>();
+        
+        int start = 0;
+        int end = n-1;
+        //int mid = 0;
+        while(start <= end) {
+            if(arr[start] == (long)x && arr[end] == (long)x) {
+                result.add((long)start);
+                result.add((long)end);
+                break;
+            }
+            
+            //mid = (start+end)/2;
+            
+            if(arr[start] != (long)x) {
+                start++;
+            }
+            
+            if(arr[end] != (long)x) {
+                end--;
+            }
+            
+            if(start > end) {
+                result.add((long)-1);
+                result.add((long)-1);
+            }
+            
+        }
+        
+        return result;
+    }
+}
